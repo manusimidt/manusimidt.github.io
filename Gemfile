@@ -3,8 +3,9 @@ source "https://rubygems.org"
 # bundle install
 # bundle exec jekyll serve
 
-gem "minima", "~> 2.5"
+
 gem 'github-pages', group: :jekyll_plugins
+gem "minima", "~> 2.5"
 
 # Plugins go here:
 group :jekyll_plugins do
