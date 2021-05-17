@@ -20,6 +20,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://manusimidt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: manusimidt
 github_username:  manusimidt
+linkedin_username:  manusimidt
 # instagram_username: manusimidt
 
 
