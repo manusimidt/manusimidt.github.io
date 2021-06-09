@@ -1,27 +1,16 @@
 ---
 layout: post
-title:  "Explaining what learned models predict"
-date:   2021-04-05 16:04:26 +0200
-categories: machine-learning
+title:  "Financial reporting in the digital age"
+date:   2021-01-17 08:53:36 +0200
+categories: xbrl
+tags: xbrl
 permalink: /:year-:month/:title
 ---
 
-## Explained what learned models predict
+## My Bachelor Thesis
+At the end of my bachelor degree in business informatics at OTH Regensburg I wrote my bachelor thesis about "Financial reporting in the digital age".
+In my thesis I discuss the XBRL standard and its technical structure. I also developed the [Python XBRL parser "py-xbrl"](https://pypi.org/project/py-xbrl/) while writing my thesis.
+To demonstrate the capabilities of the XBRL standard, I processed and analyzed tens of thousands annual and quarterly reports (10-K and 10-Q) using "py-xbrl".
 
-This essay was originally created for a university application. 
-But before the essay gathers dust on my hard drive, I'd rather share it here 😄.
-
-### Abstract
-There are many problems in computer science that cannot or can only be solved with extreme difficulty
-using pre-programmed rules. An example here would be the recognition and classification of images. Here,
-machine learning (ML) algorithms offer a good solution approach by recognizing regularities from previous
-examples, storing them, and applying them to the new images.
-However, the safety and reliability of machine-learning systems cannot be readily assessed because the
-individual steps in the learning process of an ML system are not easily comprehensible to a human, making
-the decision path very opaque.
-Given the ever-increasing impact of ML systems in our lives, it is very important that these systems are
-reliable since wrong or unintended results could have extreme consequences.
-
-This paper will discuss a small sample of possible causes of reliability problems and present some solutions.
-
-[Link to the document](/assets/documents/Explaining_what_learned_models_predict.pdf)
+Unfortunately, my entire thesis is only available in German.
+[Full Thesis (German)](/assets/documents/Bachelorarbeit_Finanzberichterstattung_im_digitalen_Zeitalter.pdf)
