@@ -15,6 +15,11 @@ XBRL (e**X**tensible **B**usiness **R**eporting **L**anguage) is a established X
 
 A very common use case is the transmission of quarterly reports and annual reports to authorities. For example, every U.S. company (over a certain size) must file quarterly reports (10-Q) and annual reports (10-K) with the SEC using XBRL. These submissions are publicly accessible through SEC EDGAR.
 
+## The Taxonomy
+Since there is a large number of financial information with different accounting systems (us-gaap, ifrs...), a common language framework must be established prior to the data transfer. In the XBRL context, this common language framework is called a Taxonomy (Taxonomy). A taxonomy describes which datapoints can be transferred and provides further information on the individual data points. 
+> An example: The US-GAAP taxonomy defines the concept "Cash and Cash Equivalents". Every company that creates a financial report based on us-gaap can use this concept (`us-gaap:CashAndCashEquivalents`) and associate it with a number in their financial report.
+
+### Concepts
 
 ## Putting it all together
 ![Structure of a XBRL Submission](/assets/img/2021-07-01_full_xbrl_structure.png "Structure of a XBRL Submission")
