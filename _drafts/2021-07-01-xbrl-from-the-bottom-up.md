@@ -136,6 +136,7 @@ But one thing is missing. Currently no one tells us which financial information 
   <!-- Many more xml elements (Concepts)... -->
 </xsd:schema>
 ```
+> Actually, this is just the Taxonomy schema. In the real world a Taxonomy would be a lot more complex!.
 
 
 
