@@ -8,19 +8,19 @@ permalink: /:year-:month/:title
 ---
 
 
-> Lately I get a lot of feedback and requests regarding my open source library `py-xbrl`, which makes me very happy. But since I unfortunately can't answer every request and many questions focus on the XBRL standard, I want to give a short overview of the XBRL standard with this blog post.
+> Lately I get a lot of feedback and requests regarding my open source library `py-xbrl`, which makes me very happy. But since I unfortunately can't answer every request and many questions focus on the XBRL standard, I want to give a short technical overview of the XBRL standard with this blog post.
 
 ## 1 Introduction
 XBRL (e**X**tensible **B**usiness **R**eporting **L**anguage) is a established XML-based specification used for the **transmission of financial data between two parties**. Transferring financial data between two different parties seems trivial at first glance. However, the huge number of different companies from different industries with different internal accounting systems makes the creation of a common interface a challenge. This is where XBRL comes into play. XBRL allows a wide variety of financial information to be compiled and transmitted. 
 
-A very common use case is the transmission of quarterly reports and annual reports to authorities. For example, every U.S. company (over a certain size) must file quarterly reports (10-Q) and annual reports (10-K) with the SEC using XBRL. These submissions are publicly accessible through SEC EDGAR.
+A very common use case is the transmission of quarterly reports and annual reports to authorities. For example, every U.S. company (over a certain size) must file quarterly reports (10-Q) and annual reports (10-K) with the SEC using XBRL. These submissions are publicly accessible through [SEC EDGAR](https://www.sec.gov/edgar/searchedgar/companysearch.html).
 
 ## 2 The Taxonomy
-Since there is a large number of financial information with different accounting systems (us-gaap, ifrs...), a common language framework must be established prior to the data transfer. In the XBRL context, this common language framework is called a **Taxonomy**. The taxonomy defines a list of concepts that can then be used in the instance document and ensures the integrity and syntactic correctness of the data.
+Since there is a large number of financial information with different accounting systems (us-gaap, ifrs...), a common language framework must be established prior to the data transfer. In the XBRL context, this common language framework is called a **Taxonomy**. The taxonomy defines a list of **concepts** that can then be used in the instance document to tag certain numbers and ensures the integrity and syntactic correctness of the data.
 > It has proven useful to create a separate taxonomy for each accounting system - e.g. IFRS, German GAAP (HGB), US GAAP. 
 
 ### 2.1 The Taxonomy Schema
-The taxonomy schema is the heart of the taxonomy and defines the concepts of the taxonomy. The concepts will later be used by the creator of a financial report to tag certain numbers.
+The taxonomy schema is the heart of the taxonomy and defines the concepts of the taxonomy. The concepts will later be used by the creator of a financial report to tag certain numbers. 
 > An example: The US-GAAP taxonomy defines the concept "Cash and Cash Equivalents". Every company that creates a financial report based on us-gaap can use this concept (`us-gaap:CashAndCashEquivalents`) and associate it with a number in their financial report.
 
 ### 2.2 Taxonomy Linkbases
@@ -51,12 +51,12 @@ In contrast to relation linkbases, which create connections between different co
 
 
 ## 3 Instance Documents
-The taxonomies discussed previously create the basic structure of reporting in XBRL and usually relate the concepts using regulatory guidelines or link them to other resources such as labels. The Instance Document builds on top of it and uses the concepts created in the taxonomy to tag the numbers to be reported, giving it meaning and structure. Thus, the instance document embodies the actual business report, for example, the annual financial statement. 
+The taxonomies discussed previously create the basic structure of reporting in XBRL and usually relate the concepts using regulatory guidelines or link them to other resources such as labels. The Instance Document builds on top of it and uses the concepts created in the taxonomy to tag the numbers to be reported, giving them meaning and structure. Thus, the **instance document** embodies the actual business report, for example, the annual financial statement. 
 
 There are two different types of instance documents: the classic XBRL instance document (XML) and the iXBRL instance document (HTML). Both types are based on the same elements, but are written in different file types.
 
 ### 3.1 Important Elements
-The core elements of an every Instance document are the **Facts**. A fact is a number (*150000*) combined with a context (*from Jan-Dec 2020 for company xyz*), a **Unit** (*USD*) and tagged with a **Concept** from the taxonomy (*us-gaap_Revenue*). As shown in the example, the **Context** defines the time frame and the company to which the fact belongs.
+The core elements of an every Instance document are the **Facts**. A fact is a number (*150000*) combined with a context (*from Jan-Dec 2020 for company xyz*), a **Unit** (*USD*) and tagged with a **Concept** from the taxonomy (*us-gaap_Revenue*). The **Context** defines the time frame and the company to which the fact belongs.
 
 To be able to tag Facts in an XBRL Instance Document, each Instance Document must reference at least one Taxonomy. After referencing a taxonomy, any concepts defined in the taxonomy can be used to tag the facts in the instance document.
 
