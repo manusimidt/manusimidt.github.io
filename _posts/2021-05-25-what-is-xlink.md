@@ -36,7 +36,7 @@ For this the so-called **Arcs** are used. In the code example, this would be the
   <resource xlink:type="resource" xlink:label="local" 
             xlink:role="last-name">Smith</resource>
   
-  <!-- This arc connects the locator with the locally defined ressources -->
+  <!-- This arc connects the locator with the locally defined resources -->
   <go xlink:type="arc" xlink:from="local" xlink:to="remote1"/> 
   
 </studentLink>
@@ -61,7 +61,7 @@ The second code example shows a link between two remotely stored elements. But t
 ```
 
 ### Summary
-XLink is a Specification that allows for defining linkings between two XML-elements. These elements can either be **locators** that reference an element in another document, or **ressources** that are defined locally. The linking of two or more elements is done with so-called **arcs**.
+XLink is a Specification that allows for defining linkings between two XML-elements. These elements can either be **locators** that reference an element in another document, or **resources** that are defined locally. The linking of two or more elements is done with so-called **arcs**.
 
 This blog post focuses mainly on extended links, as they are very important in XBRL linkbases. However, the XML Linking Language contains way more concepts. You can find the original specification [here](https://www.w3.org/TR/xlink11/).
 

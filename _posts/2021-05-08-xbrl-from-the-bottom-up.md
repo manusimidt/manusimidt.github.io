@@ -13,13 +13,13 @@ permalink: /:year-:month/:title
 <div style="text-align:center; margin: 10px"><img src="/assets/img/2021-07-01/l1.png" /></div>
 
 
-Ok, so our goal is to transfer some financial data. Let's say we want to tell the world that we generated 15.7 Million USD in Revenue in 2020. We also want our revenue report to be machine readable, no old-school pdf's! How can we encode and transfer our financial data?
+Ok, so our goal is to transfer some financial data. Let's say we want to tell the world that we generated 15.7 million USD in Revenue in 2020. We also want our revenue report to be machine readable, no old-school pdf's! How can we encode and transfer our financial data?
 
 The common approach would be to create another markup language, perhaps YAML 2.0 😉. On the other hand, it might also be smart to simply use an already existing and established standard. How about the most famous markup language in the world - **XML**?
 
 In XML, we could encode our data as follows:
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <report>
   <revenue unit="usd" from="01.01.2020" to="31.12.2020">15700000</revenue>
 </report>
@@ -36,7 +36,7 @@ Not so fast. There are a couple of issues with our report:
 
 Ok, let's make some improvements to our xml report:
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <report>
   <unit id="usd">
     <measure>USD</measure>
@@ -88,7 +88,7 @@ By using the `xbrli` namespace we show that we are using the XML elements (`<uni
 
 <div style="text-align:center; margin: 10px"><img src="/assets/img/2021-07-01/l3.png" /></div>
 
-By the way, the XML file we are creating is called **Instance Document** in the XBRL jargon. It holds all our financials that we want to publish. - So we can check another box 🥳.
+By the way, the XML file we are creating is called **Instance Document** in the XBRL jargon. It holds all our financials that we want to publish. - So, we can check another box 🥳.
 
 <div style="text-align:center; margin: 10px"><img src="/assets/img/2021-07-01/l4.png" /></div>
 
@@ -145,7 +145,7 @@ Our Instance Document now uses the tag `<us-gaap:Revenue>` for the fact. The nam
 <div style="text-align:center; margin: 10px"><img src="/assets/img/2021-07-01/l5.png" /></div>
 
 
-## Summmary
-To summarize: Our goal is to transfer financial data. Each financial data point is called a **Fact**. To each fact belongs a **Context** that stores information about the date or timeframe as well as the company the fact belongs to. Most facts also have a **Unit** attached to them. To transfer our facts, we start by creating an XML document. This XML document is called **Instance Document**. The structure of our Instance Document is defined by the **XBRL Specification**. The different concepts we can use for tagging our facts i.e: (Assets, Liabilities, CashAndCashEquivalentsAtCarryingValue) are defined in the **Taxonomy**. 
+## Summary
+To summarize: Our goal is to transfer financial data. Each financial data point is called a **Fact**. To each fact belongs a **Context** that stores information about the date or timeframe as well as the company the fact belongs to. Most facts also have a **Unit** attached to them. To transfer our facts, we start by creating an XML document. This XML document is called **Instance Document**. The structure of our Instance Document is defined by the **XBRL Specification**. The different concepts we can use for tagging our facts i.e.: (Assets, Liabilities, CashAndCashEquivalentsAtCarryingValue) are defined in the **Taxonomy**. 
 
 This blog post is written with the goal of providing the most easily digestible technical introduction to XBRL. However, it is therefore somewhat imprecise in some places and/or omits important elements. A more detailed description can be found in my Blog Post [What is XBRL?](/2021-07/xbrl-explained).
