@@ -54,7 +54,7 @@ Ok, let's make some improvements to our xml report:
 
 We have now solved the problems from above relatively well, can we send the report now? Unfortunately not quite...
 
-We are obviously not the only company in the world. If everyone did what we do, the agencies would have a really bad time processing **hundreds of slightly different reports**. We need a way to define the general structure of the report so that all financial reports have the same structure.
+We are obviously not the only company in the world. If everyone did what we do, the persons receiving the reports would have a really bad time processing **hundreds of slightly different reports**. We need a way to define the general structure of the report so that all financial reports have the same structure.
 Fortunately, XML provides an excellent way to specify the structure of an XML file with XML schemas. 
 
 
@@ -119,6 +119,7 @@ But one thing is missing. Currently no one tells us which financial information 
     </xbrli:period>
   </xbrli:context>  
 
+  <!-- This is new, we are now using the us-gaap prefix -->
   <us-gaap:Revenue unitRef="usd" contextRef="2020FY">16000000</us-gaap:Revenue>
 </xbrli:xbrl>
 ```
@@ -136,7 +137,7 @@ But one thing is missing. Currently no one tells us which financial information 
   <!-- Many more xml elements (Concepts)... -->
 </xsd:schema>
 ```
-> Actually, this is just the Taxonomy schema. In the real world a Taxonomy would be a lot more complex!.
+> Actually, this is just the Taxonomy schema. In the real world, a taxonomy would be much more complex!
 
 Our Instance Document now uses the tag `<us-gaap:Revenue>` for the fact. The namespace `http://fasb.org/us-gaap/2020-01-31` shows us that we are referring to the concept `Revenue` from the us-gaap taxonomy of 2020. The Taxonomy also stores additional information about the concept `Revenue`. This information also allows the receiver of our report to validate it.
 
@@ -145,6 +146,6 @@ Our Instance Document now uses the tag `<us-gaap:Revenue>` for the fact. The nam
 
 
 ## Summmary
-To summarize: Our goal is to transfer financial data. Each financial data point is called a **Fact**. To each fact belongs a **Context** that stores information about the date or timeframe as well as the company the fact belongs to. Most facts also have a **Unit** attached to them. To transfer our facts, we start by creating an XML document. This XML document is called **Instance Document**. The structure of our Instance Document is defined by the **XBRL Specification**. The different types of facts i.e: (Assets, Liabilities, CashAndCashEquivalentsAtCarryingValue) we are allowed to file are defined in the **Taxonomy**. 
+To summarize: Our goal is to transfer financial data. Each financial data point is called a **Fact**. To each fact belongs a **Context** that stores information about the date or timeframe as well as the company the fact belongs to. Most facts also have a **Unit** attached to them. To transfer our facts, we start by creating an XML document. This XML document is called **Instance Document**. The structure of our Instance Document is defined by the **XBRL Specification**. The different concepts we can use for tagging our facts i.e: (Assets, Liabilities, CashAndCashEquivalentsAtCarryingValue) are defined in the **Taxonomy**. 
 
 This blog post is written with the goal of providing the most easily digestible technical introduction to XBRL. However, it is therefore somewhat imprecise in some places and/or omits important elements. A more detailed description can be found in my Blog Post [What is XBRL?](/2021-07/xbrl-explained).
